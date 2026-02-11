@@ -1,4 +1,6 @@
-push!(LOAD_PATH, "../src/")
+using Pkg                                                                     
+Pkg.activate(dirname(@__DIR__))  # activates the parent directory                                                                      
+Pkg.instantiate()      
 using Documenter, GroupFunctions
 makedocs(sitename="GroupFunctions documentation",
     pages = [
@@ -18,6 +20,3 @@ makedocs(sitename="GroupFunctions documentation",
                              sidebar_sitename=false
     ),
         )
-deploydocs(
-    repo = "github.com/davidamaro/GroupFunctions.jl.git"
-)
